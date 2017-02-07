@@ -21,11 +21,15 @@ module Ruboty
       end
 
       def payload
+        payload_object.to_json
+      end
+
+      def payload_object
         button_message.merge({
           channel: channel,
           icon_emoji: icon_emoji,
           username: username,
-        }).to_json
+        })
       end
 
       def button_message
