@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "ruboty/slack/button"
+require "ruboty/slack_button"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

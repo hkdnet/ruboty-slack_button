@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ruboty/slack/button/version'
+require 'ruboty/slack_button/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "ruboty-slack-button"
-  spec.version       = Ruboty::Slack::Button::VERSION
+  spec.name          = "ruboty-slack_button"
+  spec.version       = Ruboty::SlackButton::VERSION
   spec.authors       = ["hkdnet"]
   spec.email         = ["hkdnet@users.noreply.github.com"]
 

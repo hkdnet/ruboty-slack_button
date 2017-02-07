@@ -1,4 +1,4 @@
-# Ruboty::Slack::Button
+# Ruboty::SlackButton
 
 An extension for ruboty to create a button in your channel.
 
@@ -7,7 +7,7 @@ An extension for ruboty to create a button in your channel.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruboty-slack-button'
+gem 'ruboty-slack_button'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install ruboty-slack-button
+    $ gem install ruboty-slack_button
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/hkdnet/ruboty-slack-button.
+Bug reports and pull requests are welcome on GitHub at https://github.com/hkdnet/ruboty-slack_button.
 
 
 ## License
