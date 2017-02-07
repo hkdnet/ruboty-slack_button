@@ -10,6 +10,17 @@ module Ruboty
       end
 
       def create
+        client.post(payload, headers)
+      end
+
+      def client
+        @client ||= Client.new(webhook_url)
+      end
+
+      def headers
+        @headers ||= {
+          'Content-Type' => 'application/json'
+        }
       end
 
       def channel
