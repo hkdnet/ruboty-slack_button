@@ -8,18 +8,25 @@ module Ruboty::SlackButton
     end
 
     def post(body, header)
-      uri = URI.parse(url)
-      http = Net::HTTP.new(uri.host, uri.port)
-      if uri.scheme == 'https'
-        http.use_ssl = true
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-      end
-
       req = Net::HTTP::Post.new(uri.path)
       header.each { |(k, v)| req[k] = v }
       req.body = body
-
       http.request(req)
+    end
+
+    def uri
+      @uri ||= URI.parse(url)
+    end
+
+    def http
+      @http ||=
+        begin
+          http = Net::HTTP.new(uri.host, uri.port)
+          if uri.scheme == 'https'
+            http.use_ssl = true
+            http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+          end
+        end
     end
   end
 end
