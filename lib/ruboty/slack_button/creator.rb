@@ -1,3 +1,5 @@
+require 'ruboty/slack_button/client'
+
 module Ruboty
   module SlackButton
     class Creator

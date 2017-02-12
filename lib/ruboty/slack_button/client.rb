@@ -8,9 +8,7 @@ module Ruboty::SlackButton
     end
 
     def post(body, header)
-      req = Net::HTTP::Post.new(uri.path)
-      header.each { |(k, v)| req[k] = v }
-      req.body = body
+      req = create_request(header, body)
       http.request(req)
     end
 
@@ -27,6 +25,13 @@ module Ruboty::SlackButton
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           end
         end
+    end
+
+    def create_request(body, header)
+      req = Net::HTTP::Post.new(uri.path)
+      header.each { |(k, v)| req[k] = v }
+      req.body = body
+      req
     end
   end
 end
