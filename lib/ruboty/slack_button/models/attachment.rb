@@ -1,6 +1,4 @@
-require 'ruboty/slack_button/action'
-
-module Ruboty::SlackButton
+module Ruboty::SlackButton::Models
   class Attachment
     attr_reader :text, :fallback, :callback_id, :color, :attachment_type, :actions
 

@@ -1,6 +1,5 @@
 require 'json'
 require 'ruboty/slack_button/client'
-require 'ruboty/slack_button/message'
 
 module Ruboty
   module SlackButton

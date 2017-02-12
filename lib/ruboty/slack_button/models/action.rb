@@ -1,4 +1,4 @@
-module Ruboty::SlackButton
+module Ruboty::SlackButton::Models
   class Action
     attr_accessor :name, :text, :type, :value
 

@@ -5,6 +5,7 @@ end
 
 require "ruboty"
 require "ruboty/slack_button/version"
+require 'ruboty/slack_button/models'
 require 'ruboty/slack_button/creator'
 
 require 'ruboty/slack_button/button_creatable'

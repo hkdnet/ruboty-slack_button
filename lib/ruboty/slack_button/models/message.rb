@@ -1,8 +1,6 @@
-require 'ruboty/slack_button/attachment'
-
-module Ruboty::SlackButton
+module Ruboty::SlackButton::Models
   class Message
-    attr_reader :text, :attachments
+    attr_accessor :text, :attachments
     def initialize(text: nil, attachments: nil)
       @text = text
       @attachments = attachments
