@@ -1,6 +1,8 @@
+require 'ruboty/slack_button/action'
+
 module Ruboty::SlackButton
   class Attachment
-    attr_writer :text, :fallback, :callback_id, :color, :attachment_type, :actions
+    attr_reader :text, :fallback, :callback_id, :color, :attachment_type, :actions
 
     def initialize(text: nil, fallback: nil, callback_id: nil, color: nil, attachment_type: nil, actions: nil)
       @text = text

@@ -27,7 +27,7 @@ module Ruboty
           channel: channel,
           icon_emoji: icon_emoji,
           username: username,
-        }).compact
+        })
       end
 
       def client
