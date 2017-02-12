@@ -4,14 +4,13 @@ describe Ruboty::SlackButton::Client do
   let(:client) { Ruboty::SlackButton::Client.new(url) }
   let(:url) { "http://example.com/" }
   describe '#create_request' do
+    subject { client.create_request('body', { 'foo' => 'bar' }) }
     it 'set body' do
-      req = client.create_request('body', {})
-      expect(req.body).to eq 'body'
+      expect(subject.body).to eq 'body'
     end
 
     it 'set headers' do
-      req = client.create_request('body', { 'foo' => 'bar' })
-      expect(req['foo']).to eq 'bar'
+      expect(subject['foo']).to eq 'bar'
     end
   end
 end
