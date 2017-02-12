@@ -4,7 +4,7 @@ require 'ruboty/slack_button/client'
 module Ruboty
   module SlackButton
     class Creator
-      attr_reader :message, :username, :icon_emoji, :channel, :webhook_url
+      attr_accessor :message, :username, :icon_emoji, :channel, :webhook_url
       def initialize(message, username: nil, icon_emoji: nil, channel: nil, webhook_url: nil)
         @message = message
         @username = username
@@ -14,19 +14,20 @@ module Ruboty
       end
 
       def create_button(button_message)
-        client.post(payload(button_message), headers)
+        obj = button_message.as_json
+        obj = add_slack_userinfo(obj)
+        client.post(obj.to_json, headers)
       end
 
-      def payload(button_message)
-        payload_object(button_message).to_json
+      def add_slack_userinfo(button_message_object)
+        button_message_object.merge(default_userinfo)
       end
 
-      def payload_object(button_message)
-        button_message.as_json.merge({
-          channel: channel,
-          icon_emoji: icon_emoji,
-          username: username,
-        })
+      def default_userinfo
+        obj = { channel: channel }
+        obj[:icon_emoji] = icon_emoji if icon_emoji
+        obj[:username] = username if username
+        obj
       end
 
       def client
