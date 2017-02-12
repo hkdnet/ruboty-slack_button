@@ -8,7 +8,7 @@ module Ruboty::SlackButton
     end
 
     def post(body, header)
-      req = create_request(header, body)
+      req = create_request(body, header)
       http.request(req)
     end
 
@@ -24,6 +24,7 @@ module Ruboty::SlackButton
             http.use_ssl = true
             http.verify_mode = OpenSSL::SSL::VERIFY_NONE
           end
+          http
         end
     end
 
