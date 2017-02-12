@@ -3,6 +3,7 @@ module Ruboty
   end
 end
 
+require "ruboty"
 require "ruboty/slack_button/version"
 require 'ruboty/slack_button/creator'
 
